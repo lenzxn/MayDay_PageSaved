@@ -2,262 +2,229 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Ställer in bakgrundsfärg, textfärg och textstil för hela sidan */
 body {
-  background: #6c6c6c;
-  color: #f5f5dc;
-  font-size: 30px;
-  text-align: left;
-  letter-spacing: 5px;
-  word-spacing: 15px;
-  line-height: 1.2em;
-  text-shadow: 5px 5px 10px black;
+  background: linear-gradient(180deg, #dbe7f4 0%, #cfddee 45%, #c7d8ec 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  line-height: 1.7;
 }
 
-/* Tar bort understrykning på länkar och ändrar färg */
 a {
-  color: #f5f5dc;
+  color: #123f8a;
   text-decoration: none;
 }
 
-/* Stilar för en knapp-liknande div, men "not-allowed" cursor gör att den ser inaktiv ut */
-.button {
-  background-color: magenta;
-  color: rgb(253, 254, 254);
-  font-size: 30px;
-  padding: 20px;
-  border: 5px solid black;
-  border-radius: 10px;
+a:hover {
+  text-decoration: underline;
+}
+
+.navigation {
+  background: linear-gradient(90deg, #0b1630 0%, #14396b 55%, #1d4f91 100%);
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 24px rgba(12, 25, 52, 0.18);
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: 800;
+  color: white;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.button:hover,
-.button:focus {
-  background-color: #0842a0;
-  outline: 2px solid #000;
-  outline-offset: 2px;
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex: 1;
+  max-width: 760px;
 }
 
-.hunidden-text {
+.nav-item {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-align: center;
+  flex: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  background: linear-gradient(180deg, #ffffff 0%, #dbeafe 100%);
+  color: #0f2f66;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
+
+.input-container {
+  max-width: 1180px;
+  margin: 26px auto;
+  padding: 22px;
+  background: linear-gradient(180deg, #edf4fb 0%, #dce8f6 100%);
+  border-radius: 16px;
+  border: 1px solid #b9cade;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.input-container label {
+  grid-column: 1 / 3;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.input-container input {
+  padding: 13px 14px;
   font-size: 16px;
-  margin: 20px;
-  color: #222;
+  border-radius: 10px;
+  border: 1px solid #8ea6c1;
+  background: #fdfefe;
+}
+
+.input-container button {
+  padding: 13px 22px;
+  background: linear-gradient(180deg, #d63636 0%, #a91f1f 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background: linear-gradient(180deg, #e14444 0%, #922020 100%);
 }
 
 .container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border: 1px solid #d9d9d9;
-  border-radius: 10px;
-  text-align: left;
+  max-width: 1240px;
+  margin: 30px auto 50px;
+  padding: 42px;
+  background: linear-gradient(180deg, #eaf2fb 0%, #dce8f5 100%);
+  border-radius: 22px;
+  border: 1px solid #bfd0e2;
+  box-shadow:
+    0 18px 38px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .container h1 {
   text-align: center;
-  font-size: 40px;
-  margin-bottom: 30px;
-  color: #222;
+  font-size: 54px;
+  margin-bottom: 40px;
+  color: #0f172a;
+  letter-spacing: -1px;
 }
 
 .article {
-  margin-bottom: 35px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid #ddd;
-  background: none;
+  background: linear-gradient(180deg, #f8fbff 0%, #edf4fb 100%);
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 28px;
+  border: 1px solid #d2dfeb;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
 }
 
-.article:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
+.breaking-news {
+  background: linear-gradient(90deg, #fff4f4 0%, #f8fbff 55%, #edf4fb 100%);
+  border: 1px solid #e3c4c4;
 }
 
-.article h2,
 .headline {
-  font-size: 28px;
-  font-weight: bold;
-  color: #222;
-  text-align: left;
-  margin-bottom: 15px;
-  padding: 0;
+  font-size: 44px;
+  font-weight: 800;
+  border-left: 7px solid #c62828;
+  padding-left: 18px;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.article h2 {
+  font-size: 30px;
+  margin-bottom: 14px;
+  color: #132238;
 }
 
 .article p {
   font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 15px;
+  color: #334155;
+  margin-bottom: 14px;
 }
 
 .article a {
-  color: #0b57d0;
-  text-decoration: underline;
-  font-size: 17px;
-}
-
-.article a:hover,
-.article a:focus {
-  color: #0842a0;
+  font-weight: bold;
+  font-size: 16px;
+  color: #123f8a;
 }
 
 .image-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
+  align-items: stretch;
+  gap: 18px;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 22px 0;
 }
 
 .image-container img {
-  width: 220px;
-  height: 160px;
+  width: 250px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 8px;
+  display: block;
+  border-radius: 12px;
+  border: 3px solid #d7e3ef;
+  background: linear-gradient(180deg, #d9e5f2 0%, #c8d7e8 100%);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
 }
 
 .featured-image {
-  display: block;
   width: 100%;
-  max-width: 700px;
-  height: auto;
-  margin: 20px auto 0;
-  border-radius: 8px;
+  max-width: 860px;
+  display: block;
+  margin: 22px auto 0;
+  border-radius: 14px;
+  border: 4px solid #d8e3ef;
+  background: linear-gradient(180deg, #d9e5f2 0%, #c8d7e8 100%);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
 }
 
 video {
-  display: block;
   width: 100%;
-  max-width: 700px;
-  height: auto;
-  margin: 20px auto 0;
-  border-radius: 8px;
+  max-width: 860px;
+  display: block;
+  margin: 22px auto 0;
+  border-radius: 14px;
+  border: 4px solid #d8e3ef;
+  background: #dce6f2;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
 }
 
 .gif-image {
+  width: 100%;
+  max-width: 420px;
   display: block;
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  margin: 20px auto 0;
-  border-radius: 8px;
-}
-
-/* Navigeringsmeny med mörk bakgrund och jämnt fördelade element */
-.navigation {
-  background-color: #3b3b3b;
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.navigation .nav-item {
-  color: #ffffff;
-  padding: 20px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.navigation .nav-item:hover,
-.navigation .nav-item:focus {
-  background-color: #acacac40;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 300px;
-  margin: 20px;
-}
-
-.input-container input {
-  font-size: 16px;
-  padding: 10px;
-  border: 2px solid #444;
-  border-radius: 4px;
-  background-color: white;
-  color: black;
-}
-
-.input-container button {
-  background-color: #333;
-  color: white;
-  font-size: 16px;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.input-container button:hover {
-  background-color: #555;
-}
-
-/* En "fake ad" med blinkande bakgrund och fast position längst ner */
-#fake-ad {
-  position: fixed;
-  bottom: 0;
-  width: 40%;
-  background: repeating-radial-gradient(circle, cyan, magenta 10%, yellow 20%);
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Sektion med centrerad layout */
-.top-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Text med en hover-effekt som drastiskt krymper storleken */
-.btext {
-  font-size: 18px;
-  padding: 10px 15px;
-  margin-top: 10px;
-  font-weight: bold;
-  transition:
-    transform 0.5s ease-in-out,
-    font-size 0.5s ease-in-out,
-    padding 0.5s ease-in-out;
-}
-
-/* På hover minskas texten kraftigt, nästan osynlig */
-.btext:hover {
-  transform: scale(0.1);
-  font-size: 1px;
-  padding: 1px;
-}
-
-/* Bild som roterar mellan -45 och 45 grader */
-.rotating-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: rotateLeftRight 2s infinite alternate ease-in-out;
-}
-
-/* Nyckelbildning för att rotera bilden åt vänster och höger */
-@keyframes rotateLeftRight {
-  0% {
-    transform: rotate(-45deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
+  margin: 22px auto 0;
+  border-radius: 14px;
+  border: 4px solid #d8e3ef;
+  background: linear-gradient(180deg, #d9e5f2 0%, #c8d7e8 100%);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
