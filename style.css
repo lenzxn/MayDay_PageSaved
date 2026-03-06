@@ -1,9 +1,8 @@
-/* Återställer standardmarginaler/padding och använder border-box för att inkludera padding i elementets storlek */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; /* Tungläst typsnitt */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Ställer in bakgrundsfärg, textfärg och textstil för hela sidan */
@@ -27,47 +26,126 @@ a {
 /* Stilar för en knapp-liknande div, men "not-allowed" cursor gör att den ser inaktiv ut */
 .button {
   background-color: magenta;
-  color: cyan;
-  font-size: 50px;
+  color: rgb(253, 254, 254);
+  font-size: 30px;
   padding: 20px;
-  border: 5px dashed black;
-  cursor: not-allowed;
+  border: 5px solid black;
+  border-radius: 10px;
   text-transform: uppercase;
 }
 
-/* Nästan osynlig text, spegelvänd */
-.hidden-text {
-  display: block;
-  opacity: 0.1;
-  font-size: 50px;
-  transform: rotate(180deg);
+.button:hover,
+.button:focus {
+  background-color: #0842a0;
+  outline: 2px solid #000;
+  outline-offset: 2px;
 }
 
-/* En behållare med mittjusterad text och en blå transparent bakgrund */
+.hunidden-text {
+  font-size: 16px;
+  margin: 20px;
+  color: #222;
+}
+
 .container {
-  width: 100%;
-  margin: auto;
-  border: 10px solid pink;
-  background-color: rgba(0, 0, 255, 0.2);
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.container h1 {
   text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #222;
 }
 
-/* Artikel med prickad orange linje och en radial gradient som bakgrund */
 .article {
-  border-bottom: 10px dotted orange;
-  margin-bottom: 50px;
-  padding-bottom: 50px;
-  background: radial-gradient(circle, black, transparent);
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  background: none;
 }
 
-/* Rubrik med stor text och mörkröd färg, justerad till höger */
+.article:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.article h2,
 .headline {
-  font-size: 80px;
-  font-weight: lighter;
-  color: #8d0801;
-  text-align: right;
-  margin: 50px;
-  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  text-align: left;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.article p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.article a {
+  color: #0b57d0;
+  text-decoration: underline;
+  font-size: 17px;
+}
+
+.article a:hover,
+.article a:focus {
+  color: #0842a0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.image-container img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.featured-image {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 8px;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 8px;
+}
+
+.gif-image {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 8px;
 }
 
 /* Navigeringsmeny med mörk bakgrund och jämnt fördelade element */
@@ -80,70 +158,47 @@ a {
   font-weight: bold;
 }
 
-/* Navigeringslänkar */
-.navigation .nav-item a {
+.navigation .nav-item {
   color: #ffffff;
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
+  display: inline-block;
 }
 
-/* Bakgrundsfärg vid hover på navigationslänkar */
-.navigation .nav-item:hover a {
+.navigation .nav-item:hover,
+.navigation .nav-item:focus {
   background-color: #acacac40;
 }
 
-/* Bilderna placeras i en rad, centrerar dem horisontellt och vertikalt och lägger till ett mellanrum mellan bilderna */
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Definierar storleken på bilderna och gör att de täcker det angivna utrymmet utan att bli förvrängda  */
-.image-container img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
-
-/* Input-fält i en container med kolumnlayout och flytande positionering */
 .input-container {
   display: flex;
   flex-direction: column;
-  float: right;
-  width: 50%;
-  background: #ffffff00; /* Genomskinlig bakgrund */
+  gap: 10px;
+  width: 300px;
+  margin: 20px;
 }
 
-/* Inputfält med röd text och svart ram */
 .input-container input {
-  font-size: 30px;
-  padding: 20px;
-  text-align: right;
-  border: 5px solid black;
-  background-color: rgb(255, 255, 255);
-  color: red;
-}
-
-/* Knapp med rosa kant, mörkröd bakgrund och roterad */
-.input-container button {
-  border: 10px ridge pink;
-  background-color: darkred;
-  color: white;
-  font-size: 40px;
-  padding: 30px;
-  cursor: crosshair;
-  transform: rotate(-10deg);
-}
-
-/* En knapp med blå bakgrund och vit text */
-.button {
-  display: inline-block;
+  font-size: 16px;
   padding: 10px;
-  background-color: blue;
+  border: 2px solid #444;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+
+.input-container button {
+  background-color: #333;
   color: white;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #555;
 }
 
 /* En "fake ad" med blinkande bakgrund och fast position längst ner */
@@ -176,7 +231,9 @@ a {
   padding: 10px 15px;
   margin-top: 10px;
   font-weight: bold;
-  transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out,
+  transition:
+    transform 0.5s ease-in-out,
+    font-size 0.5s ease-in-out,
     padding 0.5s ease-in-out;
 }
 
