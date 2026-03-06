@@ -2,13 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".input-container");
   const input = document.querySelector("#search");
   const articles = document.querySelectorAll(".article");
+  const message = document.querySelector("#search-message");
 
-  if (!form || !input || articles.length === 0) return;
+  if (!form || !input || articles.length === 0 || !message) return;
 
   function showAllArticles() {
     articles.forEach((article) => {
       article.style.display = "block";
     });
+  }
+
+  function clearMessage() {
+    message.textContent = "";
   }
 
   form.addEventListener("submit", (event) => {
@@ -18,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (searchValue === "") {
       showAllArticles();
+      clearMessage();
       return;
     }
 
@@ -35,15 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (matches === 0) {
-      alert("Nothing found.");
+      message.textContent = "No articles matched your search.";
       input.value = "";
       showAllArticles();
+    } else {
+      clearMessage();
     }
   });
 
   input.addEventListener("input", () => {
     if (input.value.trim() === "") {
       showAllArticles();
+      clearMessage();
     }
   });
 });

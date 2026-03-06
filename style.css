@@ -20,6 +20,14 @@ a:hover {
   text-decoration: underline;
 }
 
+.search-message {
+  grid-column: 1 / 3;
+  font-size: 15px;
+  font-weight: 600;
+  color: #a91f1f;
+  min-height: 22px;
+}
+
 .navigation {
   background: linear-gradient(90deg, #0b1630 0%, #14396b 55%, #1d4f91 100%);
   padding: 24px 40px;
